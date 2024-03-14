@@ -3,7 +3,7 @@ version: "3"
 services:
   vscode-server:
     container_name: vscode-server
-    build: ./vscode-server
+    #build: ./vscode-server
     image: sinredempti0n/vscode-server:4.22.0
     restart: always
     ports:
