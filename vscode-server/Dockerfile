@@ -11,8 +11,8 @@ RUN sed -i "s/# en_US.UTF-8/en_US.UTF-8/" /etc/locale.gen   && locale-gen # buil
 
 ENV LANG=en_US.UTF-8
 
-RUN adduser --gecos '' --disabled-password sinredemption   && echo "coder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/nopasswd # buildkit
-RUN ARCH="$(dpkg --print-architecture)"   && curl -fsSL "https://github.com/boxboat/fixuid/releases/download/v0.6.0/fixuid-0.6.0-linux-$ARCH.tar.gz" | tar -C /usr/local/bin -xzf -   && chown root:root /usr/local/bin/fixuid   && chmod 4755 /usr/local/bin/fixuid   && mkdir -p /etc/fixuid   && printf "user: sinredemption\ngroup: sinredemption\n" > /etc/fixuid/config.yml 
+RUN adduser --gecos '' --disabled-password sinredempti0n   && echo "coder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/nopasswd # buildkit
+RUN ARCH="$(dpkg --print-architecture)"   && curl -fsSL "https://github.com/boxboat/fixuid/releases/download/v0.6.0/fixuid-0.6.0-linux-$ARCH.tar.gz" | tar -C /usr/local/bin -xzf -   && chown root:root /usr/local/bin/fixuid   && chmod 4755 /usr/local/bin/fixuid   && mkdir -p /etc/fixuid   && printf "user: sinredempti0n\ngroup: sinredempti0n\n" > /etc/fixuid/config.yml 
 
 RUN curl -fOL https://github.com/coder/code-server/releases/download/v$VERSION/code-server_${VERSION}_amd64.deb
 RUN dpkg -i code-server_${VERSION}_amd64.deb
@@ -33,6 +33,6 @@ COPY /docker-entrypoint.sh /usr/bin/entrypoint.sh
 ENV ENTRYPOINTD=/entrypoint.d
 EXPOSE 8080/tcp
 USER 1000
-ENV USER=sinredemption
+ENV USER=sinredempti0n
 
 ENTRYPOINT [ "/usr/bin/entrypoint.sh","--bind-addr","0.0.0.0:8080","."]
