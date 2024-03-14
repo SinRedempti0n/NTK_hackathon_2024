@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  vscode-server:
+    container_name: vscode-server
+    build: ./vscode-server
+    image: sinredemption/vscode-server:4.22.0
+    restart: always
+    ports:
+      - 127.0.0.1:8080:8080
+    volumes:
+      - ./vscode-server/local:/home/sinredemption/.local
+      - ./vscode-server/config:/home/sinredemption/.config
+      - ./project:/home/sinredemption/project
