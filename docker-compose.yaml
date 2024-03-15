@@ -7,7 +7,7 @@ services:
     image: sinredempti0n/vscode-server:4.22.0
     restart: always
     ports:
-      - 127.0.0.1:8080:8080
+      - 443:8080
     volumes:
       - ./vscode-server/local:/home/sinredempti0n/.local
       - ./vscode-server/config:/home/sinredempti0n/.config

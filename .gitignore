@@ -1,2 +1,3 @@
 vscode-server/config/*
 vscode-server/local/*
+project/.venv
