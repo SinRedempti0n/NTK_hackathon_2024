@@ -12,3 +12,10 @@ services:
       - ./vscode-server/local:/home/sinredempti0n/.local
       - ./vscode-server/config:/home/sinredempti0n/.config
       - ./project:/home/sinredempti0n/project
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
